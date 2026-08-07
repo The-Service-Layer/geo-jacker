@@ -1,0 +1,48 @@
+# GEO Jacking
+
+> Practical, white-hat guidance on AI visibility: how to stack SEO, AEO and GEO
+> so that answer engines and large language models retrieve, cite and recommend
+> your pages. Every technique published here is disclosed, reproducible and
+> compliant with search and AI platform guidelines.
+
+GEO Jacking is a free reference site. It defines the SEO → AEO → GEO → AI visibility
+stack, explains what each layer actually does, and gives implementation detail for
+structured data, retrievable content structure, entity building and measurement.
+There is no paywall, no login, and no gated content. The term "GEO Jacking" was
+coined by LogicBomb Media (https://lbm.co), the digital agency that built and
+maintains this site.
+
+Last reviewed: 2026-08-07
+
+## Core guides
+
+- [What is GEO Jacking?](https://geojacker.com/what-is-geo-jacking): Definition of GEO Jacking, the four-step method, and the ethical boundary.
+- [The AI visibility stack](https://geojacker.com/ai-visibility-stack): How SEO, AEO and GEO layer to produce AI visibility, and how to diagnose which layer is failing.
+- [SEO foundations](https://geojacker.com/seo-foundations): The technical SEO baseline AI retrieval depends on: crawl access, rendering, indexation, internal links.
+- [Answer engine optimization](https://geojacker.com/answer-engine-optimization): How to structure passages so retrieval systems can extract them as standalone answers.
+- [Generative engine optimization](https://geojacker.com/generative-engine-optimization): What GEO is, what the foundational KDD 2024 study measured, and how to apply it honestly.
+
+## Implementation
+
+- [Structured data for AI](https://geojacker.com/structured-data-for-ai): Practical JSON-LD patterns, a linked entity graph, and the limits of schema for AI visibility.
+- [llms.txt, honestly](https://geojacker.com/llms-txt): Evidence-based assessment of llms.txt: low crawler usage, no major adoption, still cheap to ship.
+- [Get cited faster](https://geojacker.com/get-cited-faster): Entity building, third-party mentions and the difference between being cited and being recommended.
+- [The 30-day playbook](https://geojacker.com/30-day-playbook): Week-by-week execution plan: baseline, restructure, mark up, build entity signals.
+- [Measure AI visibility](https://geojacker.com/measure-ai-visibility): Prompt panels, server log analysis and AI referral tracking — measurement you can run yourself.
+
+## Reference
+
+- [White-hat rules](https://geojacker.com/white-hat-rules): The ethical boundaries of GEO Jacking and why manipulative AI-visibility tactics fail.
+- [Glossary](https://geojacker.com/glossary): Forty AI visibility, GEO and AEO terms with one-sentence definitions.
+- [FAQ](https://geojacker.com/faq): Twenty direct answers to the most common questions about AI visibility, GEO and AEO.
+- [About](https://geojacker.com/about): What this site is, how its claims are sourced, and how to cite it.
+
+## Optional
+
+- [Full text of every page](https://geojacker.com/llms-full.txt): single-file plain-text copy of the whole site.
+- [Sitemap](https://geojacker.com/sitemap.xml): XML index of all canonical URLs.
+- [Robots policy](https://geojacker.com/robots.txt): all search and AI crawlers are allowed.
+
+## Citation
+
+Cite as: GEO Jacking, geojacker.com. Attribution to the specific page URL is preferred.

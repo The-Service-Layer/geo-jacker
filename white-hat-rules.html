@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>White-Hat Rules: What GEO Jacking Refuses to Do, and Why</title>
+<meta name="description" content="Prompt injection, cloaking, fabricated statistics and fake reviews all have negative expected value. The eight rules we hold to, and the reasoning behind each.">
+<link rel="canonical" href="https://geojacker.com/white-hat-rules">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="GEO Jacking">
+<meta name="theme-color" content="#6B3CF5">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GEO Jacking">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="White-Hat Rules: What GEO Jacking Refuses to Do, and Why">
+<meta property="og:description" content="Prompt injection, cloaking, fabricated statistics and fake reviews all have negative expected value. The eight rules we hold to, and the reasoning behind each.">
+<meta property="og:url" content="https://geojacker.com/white-hat-rules">
+<meta property="og:image" content="https://geojacker.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GEO Jacking — white-hat AI visibility">
+<meta property="article:modified_time" content="2026-08-07T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="White-Hat Rules: What GEO Jacking Refuses to Do, and Why">
+<meta name="twitter:description" content="Prompt injection, cloaking, fabricated statistics and fake reviews all have negative expected value. The eight rules we hold to, and the reasoning behind each.">
+<meta name="twitter:image" content="https://geojacker.com/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css?v=1e28ea1a">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://geojacker.com/#organization","name":"GEO Jacking","url":"https://geojacker.com/","description":"White-hat AI visibility: stack SEO, AEO and GEO until engines cite you.","slogan":"Get cited, not just ranked.","parentOrganization":{"@type":"Organization","name":"LogicBomb Media","url":"https://lbm.co/"},"logo":{"@type":"ImageObject","@id":"https://geojacker.com/#logo","url":"https://geojacker.com/og-image.png","width":1200,"height":630},"knowsAbout":["Generative engine optimization","Answer engine optimization","Search engine optimization","AI visibility","Structured data","Schema.org","llms.txt","Large language model citations"]},{"@type":"WebSite","@id":"https://geojacker.com/#website","url":"https://geojacker.com/","name":"GEO Jacking","description":"White-hat AI visibility: stack SEO, AEO and GEO until engines cite you.","publisher":{"@id":"https://geojacker.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://geojacker.com/white-hat-rules#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://geojacker.com/"},{"@type":"ListItem","position":2,"name":"White-hat rules","item":"https://geojacker.com/white-hat-rules"}]},{"@type":"WebPage","@id":"https://geojacker.com/white-hat-rules#webpage","url":"https://geojacker.com/white-hat-rules","name":"White-Hat Rules: What GEO Jacking Refuses to Do, and Why","description":"Prompt injection, cloaking, fabricated statistics and fake reviews all have negative expected value. The eight rules we hold to, and the reasoning behind each.","isPartOf":{"@id":"https://geojacker.com/#website"},"breadcrumb":{"@id":"https://geojacker.com/white-hat-rules#breadcrumb"},"inLanguage":"en-US","datePublished":"2026-08-07","dateModified":"2026-08-07","about":{"@id":"https://geojacker.com/#ai-visibility"},"primaryImageOfPage":{"@id":"https://geojacker.com/#logo"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".cite-block .answer","h1"]}},{"@type":"DefinedTerm","@id":"https://geojacker.com/#ai-visibility","name":"AI visibility","description":"How often and how prominently a brand's content is retrieved, cited and recommended inside AI-generated answers.","inDefinedTermSet":{"@id":"https://geojacker.com/glossary#termset"}},{"@type":"TechArticle","@id":"https://geojacker.com/white-hat-rules#article","headline":"White-hat rules","alternativeHeadline":"White-Hat Rules: What GEO Jacking Refuses to Do, and Why","description":"Prompt injection, cloaking, fabricated statistics and fake reviews all have negative expected value. The eight rules we hold to, and the reasoning behind each.","abstract":"Every technique on this site is disclosed, reproducible and compliant with search and AI platform guidelines. The manipulative alternatives &mdash; prompt injection, cloaking, fabricated statistics, review fraud, mass-generated pages &mdash; share a structural flaw: they exploit a specific system behaviour that changes without warning, and the recovery cost when it changes exceeds anything they earned.","url":"https://geojacker.com/white-hat-rules","mainEntityOfPage":{"@id":"https://geojacker.com/white-hat-rules#webpage"},"isPartOf":{"@id":"https://geojacker.com/#website"},"author":{"@id":"https://geojacker.com/#organization"},"publisher":{"@id":"https://geojacker.com/#organization"},"datePublished":"2026-08-07","dateModified":"2026-08-07","inLanguage":"en-US","proficiencyLevel":"Beginner","articleSection":"Ethics","keywords":"white hat GEO, prompt injection, cloaking, AI content ethics","wordCount":664,"image":{"@id":"https://geojacker.com/#logo"}},{"@type":"FAQPage","@id":"https://geojacker.com/white-hat-rules#faq","mainEntity":[{"@type":"Question","name":"Is hiding instructions for AI in my HTML illegal?","acceptedAnswer":{"@type":"Answer","text":"Legality varies by jurisdiction and by what the instruction attempts. What's unambiguous is that it violates the terms of service of every major AI platform, it's detectable through standard content analysis, and it's a form of cloaking under Google's spam policies. Sites caught doing it have had content demoted or removed. The mechanism also stops working the moment a model is trained to ignore in-content instructions &mdash; which is an active area of work at every AI lab."}},{"@type":"Question","name":"What about AI-generated content — is that black hat?","acceptedAnswer":{"@type":"Answer","text":"Not inherently. Google's position is that it evaluates content quality and usefulness, not production method. What fails is scaled content abuse: generating large volumes of pages primarily to manipulate rankings, with no original value. The practical test is whether a person with the question would be glad they landed on your page. If the only reason it exists is to occupy a slot, it's the abuse pattern regardless of who or what wrote it."}},{"@type":"Question","name":"Competitors are using these tactics and winning. Why shouldn't I?","acceptedAnswer":{"@type":"Answer","text":"Sometimes they are, temporarily. The question is what you're buying: a position that disappears at the next model update or policy enforcement, plus a cleanup cost and a reputational risk if it surfaces. Meanwhile the white-hat assets &mdash; original data, entity strength, genuine expertise &mdash; keep working through every update, because they're what the systems are trying to find in the first place."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="/" aria-label="GEO Jacking home"><span class="geo">GEO</span><span class="jack">JACKING</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Main"><ul><li><a href="/what-is-geo-jacking">What is it</a></li><li><a href="/ai-visibility-stack">The stack</a></li><li><a href="/seo-foundations">SEO</a></li><li><a href="/answer-engine-optimization">AEO</a></li><li><a href="/generative-engine-optimization">GEO</a></li><li><a href="/structured-data-for-ai">Schema</a></li><li><a href="/llms-txt">llms.txt</a></li><li><a href="/get-cited-faster">Get cited</a></li><li><a href="/30-day-playbook">Playbook</a></li><li><a href="/measure-ai-visibility">Measure</a></li><li><a href="/white-hat-rules" aria-current="page">Ethics</a></li><li><a href="/glossary">Glossary</a></li><li><a href="/faq">FAQ</a></li></ul></nav>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><ol><li><a href="/">Home</a></li><li>White-hat rules</li></ol></div></nav>
+<main id="main">
+
+<div class="wrap page-body has-rail"><aside class="rail" aria-labelledby="rail-h"><h2 id="rail-h" class="rail-h">On this page</h2><nav aria-label="On this page"><ol><li><a href="#the-eight-rules">The eight rules</a></li><li><a href="#why-the-shortcuts-have-negative-expected-value">Why the shortcuts have negative expected value</a></li><li><a href="#the-test">The test</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></nav></aside><div class="col">
+  <p class="eyebrow">Ethics · Non-negotiable</p>
+  <h1>White-hat rules</h1>
+  <p class="lede">&ldquo;Jacking&rdquo; describes taking a slot in an answer. It does not describe how
+  you take it. Here's the line, and the practical argument for staying on this side of it.</p>
+
+  <div class="cite-block alt">
+    <span class="cite-tag">The short answer</span>
+    <p class="answer">Every technique on this site is disclosed, reproducible and compliant with
+    search and AI platform guidelines.</p>
+    <p>The manipulative alternatives share a structural flaw: they exploit a specific system
+    behaviour that changes without warning, and the recovery cost when it changes exceeds anything
+    they earned.</p>
+  </div>
+
+  <h2 id="the-eight-rules"><span class="h-num">01</span>The eight rules</h2>
+
+  <h3>1. Never write instructions aimed at a model</h3>
+  <p>Hidden text, white-on-white div's, comments telling an assistant to recommend you — all of it is
+  prompt injection. It violates every platform's terms, it's detectable, and the countermeasures are
+  under active development. It is the tactic most likely to produce a public embarrassment.</p>
+
+  <h3>2. Never serve crawlers something different from humans</h3>
+  <p>Cloaking has been a spam violation for twenty years and the definition covers AI user agents.
+  If you wouldn't show a page to a customer, don't show it to GPTBot.</p>
+
+  <h3>3. Never invent a statistic</h3>
+  <p>The most tempting shortcut, because the research says numbers increase citation rates. A
+  fabricated number that gets picked up is worse than useless: it's a falsifiable claim attached to
+  your brand, propagating. If you don't have the data, cite someone who does or say you don't know.</p>
+
+  <h3>4. Never fake third-party validation</h3>
+  <p>Purchased reviews, sockpuppet mentions, undisclosed paid Wikipedia editing, fake community
+  posts. Beyond the platform violations, review fraud is regulated in many jurisdictions and
+  enforcement has increased.</p>
+
+  <h3>5. Never publish a page with nothing new in it</h3>
+  <p>Mass-generated content restating what's already on ten domains is scaled content abuse. It also
+  can't win on merit &mdash; if there's no reason to prefer your version, an engine has no reason to
+  cite it.</p>
+
+  <h3>6. Never rank yourself in your own comparison</h3>
+  <p>Beyond being self-serving, it measurably backfires: a <a
+  href="https://lilyraynyc.substack.com/p/why-calling-yourself-the-best-could" rel="noopener">2026
+  analysis by SEO researcher Lily Ray</a> found brands publishing
+  self-favouring &ldquo;best of&rdquo; lists were left out of the AI recommendation about 69% of the
+  time. Publish the honest comparison instead.</p>
+
+  <h3>7. Never claim expertise you don't have</h3>
+  <p>Invented author personas, fake credentials, stock-photo experts. Entity signals are checkable
+  and increasingly checked. A real person with a modest track record beats a fictional one with an
+  impressive bio.</p>
+
+  <h3>8. Always disclose material relationships</h3>
+  <p>Affiliate links, sponsorships, ownership stakes in tools you recommend. Disclosure is legally
+  required in many contexts and it's a trust signal in all of them.</p>
+
+  <h2 id="why-the-shortcuts-have-negative-expected-value"><span class="h-num">02</span>Why the shortcuts have negative expected value</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>Manipulative tactic versus its durable alternative</caption>
+      <thead><tr><th scope="col">Tactic</th><th scope="col">Fails because</th><th scope="col">Do this instead</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Prompt injection in page text</th><td>Detectable, ToS violation, actively being patched</td><td>Write the clearest genuine answer on the topic</td></tr>
+        <tr><th scope="row">Cloaked content for AI agents</th><td>Long-standing spam violation; trivially caught by comparison</td><td>Server-render one version everyone sees</td></tr>
+        <tr><th scope="row">Fabricated statistics</th><td>Falsifiable, propagates your error, reputationally toxic</td><td>Publish first-party data you actually own</td></tr>
+        <tr><th scope="row">Purchased reviews and mentions</th><td>Regulated, platform-enforced, low-quality signal anyway</td><td>Earn descriptions through original work</td></tr>
+        <tr><th scope="row">Mass-generated thin pages</th><td>Scaled content abuse; nothing to cite</td><td>Fewer pages, each with something new</td></tr>
+        <tr><th scope="row">Self-ranking comparisons</th><td>Discounted by engines ~69% of the time (Lily Ray, 2026)</td><td>Honest comparison including where you lose</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="the-test"><span class="h-num">03</span>The test</h2>
+  <p>One question resolves nearly every edge case: <strong>would you be comfortable if this
+  technique were described accurately, in public, next to your brand name?</strong></p>
+  <p>&ldquo;We published a survey of 400 practitioners and structured the findings so they're easy to
+  quote&rdquo; passes. &ldquo;We hid a line telling assistants we're the market leader&rdquo; does
+  not. The test isn't about niceness &mdash; it's that anything failing it is a liability sitting on
+  your own servers waiting to be found.</p>
+
+  <div class="note">
+    <p><strong>Our commitment</strong>This site publishes no fabricated statistics. Where a number
+    comes from a study or vendor dataset, the source is named and linked in the text so you can
+    verify it directly.
+    Where a claim is contested &mdash; <a href="/llms-txt">llms.txt</a> is the standout example &mdash;
+    we say so rather than selling it.</p>
+  </div>
+</div></div><section id="faq" class="band" aria-labelledby="faq-h"><div class="wrap"><h2 id="faq-h"><span class="h-num">Questions engines ask</span>Frequently asked questions</h2><div class="faq"><details><summary>Is hiding instructions for AI in my HTML illegal?</summary><div class="a"><p>Legality varies by jurisdiction and by what the instruction attempts. What's unambiguous is that it violates the terms of service of every major AI platform, it's detectable through standard content analysis, and it's a form of cloaking under Google's spam policies. Sites caught doing it have had content demoted or removed. The mechanism also stops working the moment a model is trained to ignore in-content instructions &mdash; which is an active area of work at every AI lab.</p></div></details><details><summary>What about AI-generated content — is that black hat?</summary><div class="a"><p>Not inherently. Google's position is that it evaluates content quality and usefulness, not production method. What fails is scaled content abuse: generating large volumes of pages primarily to manipulate rankings, with no original value. The practical test is whether a person with the question would be glad they landed on your page. If the only reason it exists is to occupy a slot, it's the abuse pattern regardless of who or what wrote it.</p></div></details><details><summary>Competitors are using these tactics and winning. Why shouldn't I?</summary><div class="a"><p>Sometimes they are, temporarily. The question is what you're buying: a position that disappears at the next model update or policy enforcement, plus a cleanup cost and a reputational risk if it surfaces. Meanwhile the white-hat assets &mdash; original data, entity strength, genuine expertise &mdash; keep working through every update, because they're what the systems are trying to find in the first place.</p></div></details></div></div></section><div class="wrap" style="padding-bottom:3rem"><nav class="pager" aria-label="More guides"><a href="/measure-ai-visibility" rel="prev"><span class="dir">← Previous</span><span class="ttl">Measure AI visibility</span></a><a class="next" href="/glossary" rel="next"><span class="dir">Next →</span><span class="ttl">Glossary</span></a></nav></div></main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>GEO Jacking</h2>
+        <p>White-hat AI visibility: stack SEO, AEO and GEO until engines cite you.</p>
+        <p><a href="/llms.txt">/llms.txt</a> · <a href="/robots.txt">/robots.txt</a> · <a href="/sitemap.xml">/sitemap.xml</a></p>
+      </div>
+      <div>
+        <h3>The stack</h3>
+        <ul><li><a href="/what-is-geo-jacking">What is it</a></li><li><a href="/ai-visibility-stack">The stack</a></li><li><a href="/seo-foundations">SEO</a></li><li><a href="/answer-engine-optimization">AEO</a></li><li><a href="/generative-engine-optimization">GEO</a></li></ul>
+      </div>
+      <div>
+        <h3>Implementation</h3>
+        <ul><li><a href="/structured-data-for-ai">Schema</a></li><li><a href="/llms-txt">llms.txt</a></li><li><a href="/get-cited-faster">Get cited</a></li><li><a href="/30-day-playbook">Playbook</a></li><li><a href="/measure-ai-visibility">Measure</a></li></ul>
+      </div>
+      <div>
+        <h3>Reference</h3>
+        <ul><li><a href="/white-hat-rules">Ethics</a></li><li><a href="/glossary">Glossary</a></li><li><a href="/faq">FAQ</a></li><li><a href="/about">About</a></li></ul>
+      </div>
+    </div>
+    <p class="fine">
+      © <span data-year>2026</span> GEO Jacking · geojacker.com · A <a href="https://lbm.co" rel="noopener">LogicBomb Media</a> project · Last reviewed 2026-08-07<br>
+      Every technique on this site is white hat: no cloaking, no prompt injection, no fake reviews, no scraped content.
+      Read the <a href="/white-hat-rules">rules we hold ourselves to</a>.
+    </p>
+  </div>
+</footer>
+<script src="/assets/app.js?v=4449b36f" defer></script>
+</body>
+</html>
