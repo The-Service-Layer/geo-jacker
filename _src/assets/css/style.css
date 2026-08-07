@@ -295,7 +295,8 @@ a.chip:hover { background: var(--hot); color: #fff; }
 .pipeline li:last-child { background: var(--mint); color: #05231f; font-weight: 700; }
 
 /* ---------- The stack ---------- */
-.stack { display: grid; gap: .5rem; margin: 1.8rem 0 2.2rem; max-width: 44rem; }
+/* DOM order is layer 1 → outcome; column-reverse renders the foundation at the bottom */
+.stack { display: flex; flex-direction: column-reverse; gap: .5rem; margin: 1.8rem 0 2.2rem; max-width: 44rem; }
 .layer {
   border: 2px solid var(--ink); border-radius: 4px;
   padding: .85rem 1rem; background: var(--paper-2);

@@ -5,6 +5,7 @@ import hashlib, json, os, shutil, datetime, re
 
 SITE = "https://geojacker.com"
 NAME = "GEO Jacking"
+GA_ID = "G-56LRQGR099"
 TAGLINE = "White-hat AI visibility: stack SEO, AEO and GEO until engines cite you."
 TODAY = "2026-08-07"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -336,6 +337,15 @@ HEAD = """<!doctype html>
 <link rel="preload" href="/assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css?v={cssv}">
 <script type="application/ld+json">{schema}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={ga_id}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', '{ga_id}');
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -392,7 +402,7 @@ def render(page, pages):
         page = dict(page, noindex=True)
     head = HEAD.format(
         title=esc(page["title"]), desc=esc(page["desc"]), url=url, site=SITE,
-        name=NAME, nav=nav_html(page["slug"]), schema=schema,
+        name=NAME, nav=nav_html(page["slug"]), schema=schema, ga_id=GA_ID,
         crumbs=crumbs_html(page), today=TODAY, cssv=CSS_V,
         ogtype="website" if page["slug"] == "/" else "article",
         robots="noindex, follow" if page.get("noindex") else
