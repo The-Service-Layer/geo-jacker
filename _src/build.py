@@ -7,7 +7,8 @@ SITE = "https://geojacker.com"
 NAME = "GEO Jacking"
 TAGLINE = "White-hat AI visibility: stack SEO, AEO and GEO until engines cite you."
 TODAY = "2026-08-07"
-OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, "public")
 ASSETS = os.path.join(os.path.dirname(__file__), "assets")
 
 
@@ -16,8 +17,8 @@ def asset_version(fname):
         return hashlib.md5(f.read()).hexdigest()[:8]
 
 
-CSS_V = asset_version("style.css")
-JS_V = asset_version("app.js")
+CSS_V = asset_version("css/style.css")
+JS_V = asset_version("js/app.js")
 
 # ---------------------------------------------------------------- navigation
 NAV = [
@@ -49,6 +50,29 @@ def esc(t):
 
 def strip_tags(html):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
+
+
+A_EXTERNAL_RE = re.compile(r'<a\s+([^>]*href="https?://[^"]*"[^>]*)>')
+
+
+def externalize_links(html):
+    """Open every off-site link in a new tab with rel="noopener"."""
+    def repl(m):
+        attrs = m.group(1)
+        if f'href="{SITE}' in attrs or "target=" in attrs:
+            return m.group(0)
+        if 'rel="' in attrs:
+            attrs = re.sub(
+                r'rel="([^"]*)"',
+                lambda r: r.group(0) if "noopener" in r.group(1)
+                else f'rel="{r.group(1)} noopener"',
+                attrs,
+            )
+        else:
+            attrs += ' rel="noopener"'
+        return f'<a {attrs} target="_blank">'
+
+    return A_EXTERNAL_RE.sub(repl, html)
 
 
 def nav_html(slug):
@@ -310,7 +334,7 @@ HEAD = """<!doctype html>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v={cssv}">
+<link rel="stylesheet" href="/assets/css/style.css?v={cssv}">
 <script type="application/ld+json">{schema}</script>
 </head>
 <body>
@@ -355,7 +379,7 @@ FOOT = """</main>
     </p>
   </div>
 </footer>
-<script src="/assets/app.js?v={jsv}" defer></script>
+<script src="/assets/js/app.js?v={jsv}" defer></script>
 </body>
 </html>
 """
@@ -380,7 +404,9 @@ def render(page, pages):
         fbuild="".join(f'<li><a href="{h}">{l}</a></li>' for h, l in FOOT_BUILD),
         fref="".join(f'<li><a href="{h}">{l}</a></li>' for h, l in FOOT_REF),
     )
-    return head + add_rail(page["body"]) + faq_html(page.get("faqs")) + pager_html(page, pages) + foot
+    return externalize_links(
+        head + add_rail(page["body"]) + faq_html(page.get("faqs")) + pager_html(page, pages) + foot
+    )
 
 
 # ---------------------------------------------------------------- write
@@ -430,8 +456,9 @@ def build():
     # ---- 404
     write("404.html", render(NOT_FOUND, PAGES))
 
-    # ---- vercel config
-    write("vercel.json", VERCEL_JSON)
+    # ---- vercel config (lives at repo root, not in the output dir)
+    with open(os.path.join(ROOT, "vercel.json"), "w", encoding="utf-8") as f:
+        f.write(VERCEL_JSON)
 
 
     print(f"Built {len(PAGES)} pages into {OUT}")
@@ -476,6 +503,7 @@ NOT_FOUND = {
 
 VERCEL_JSON = """{
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
