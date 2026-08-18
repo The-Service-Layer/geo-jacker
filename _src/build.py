@@ -193,6 +193,9 @@ def org_node():
             "name": "LogicBomb Media",
             "url": "https://lbm.co/",
         },
+        "sameAs": [
+            "https://github.com/The-Service-Layer/geo-jacker",
+        ],
         "logo": {
             "@type": "ImageObject",
             "@id": f"{SITE}/#logo",
